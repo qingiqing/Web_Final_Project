@@ -4,9 +4,7 @@
 ---
 ## 知識王
 ### 遊戲主題
-<style>
-.navbar-brand::after { content: " × 知識王的啦"; }
-</style>
+
 <!-- :::spoiler 題目
 WirForce 知識王大賽圓滿成功！
 （以下為本屆題庫）
@@ -126,17 +124,10 @@ A.陽明山    B.玉山    C.阿里山    D.海珊
 ## 使用語言
  -->
  
-:::info 
-<font size = 5 color = "black">如何新增 Branch</font>
-step 1：git branch "your branch's name" <font color = "9d9d9d">// 雙引號可加可不加</font>
-step 2：git checkout your branch's name <font color = "9d9d9d">// 進到你的branch</font>
-step 3：git add .
-step 4：git commit -m "你的註解"
-step 5：git push origin your branch's name <font color = "9d9d9d">//上傳到你的branch</font>
-:::
+
  
-知識王 https://koding.school/projects/2pdsj35w/edit
-小畫家 https://wcc723.github.io/canvas/2014/12/09/html5-canvas-03/
+![知識王](https://koding.school/projects/2pdsj35w/edit)
+![小畫家](https://wcc723.github.io/canvas/2014/12/09/html5-canvas-03/)
   
 ### 前端
 - html
@@ -152,6 +143,7 @@ step 5：git push origin your branch's name <font color = "9d9d9d">//上傳到�
 * 版面：照舊，最後在細修
     * 要放背景音樂?
 * 後端 : js 放題目 (排行榜)
+
 > 放哪裡再說
 ---
 ## 周計畫
