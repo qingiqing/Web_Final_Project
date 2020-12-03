@@ -8,7 +8,7 @@
       background-image: -webkit-linear-gradient(#FD1701, #FDF704,#FD1701);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
+}
 .centerbody{
   position: absolute;
   top: 25%;
@@ -23,11 +23,10 @@
   right: 10%;
   bottom: 50%;
 }
-.ex
-{
+.ex{
   background-color:#000;
   height: 50px;
-  padding:7px;
+  padding:10px;
   border:solid 1px #c3c3c3;
   margin-top: 20px;
   font-size: 30px;
@@ -38,7 +37,7 @@ button{
    border-radius: 20px;
    cursor: pointer;
 }
-.content{
+.content1{
     font-size: 30px;
     color: #000;
     position:absolute;
@@ -65,8 +64,19 @@ button{
   left: 100%;
   right: 0%;
   top:150px;
+  font-size: 60px;
 }
+#marquee1{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 25px;
+    color: #FFF;
+    position:absolute;
+    text-align: center;
+    /*background-color: #000;*/
+    height: 500px;
+    width: 100%;
 }
+
 /*.shadow{
         text-align:center;
         font-family: 'Press Start 2P', cursive;
