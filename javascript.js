@@ -1,20 +1,25 @@
 var ans; //紀錄答案
-var counter = 0; //紀錄作答題數
+var counter = 0 //紀錄作答題數
 var score = 0; //分數
+var a;
+$(document).ready(function(){
+  $('.option').click(function(){
+  	a = $(this).attr("id");
+  	answerQuestion(a);
+  });
+});
+$(document).ready(function(){
+  $('.nextone').click(function(){
+    showQuestion();
+  });
+});
 
-$(document).ready(function(){
-  $('.option').click(answerQuestion);
-});
-$(document).ready(function(){
-  $('.nextone').click(answerQuestion);
-});
 
 //顯示題目
 function showQuestion(){
   var random = Math.floor(Math.random()*questions.length);
   var q = questions.splice(random,1)[0];
-
-  counter++;
+  counter+=1;
   $(document).ready(function(){
     $("#counter").text("Question: " + counter);
     $("#content").text(q.content);
@@ -22,28 +27,34 @@ function showQuestion(){
     $("#b").text(q.b);
     $("#c").text(q.c);
     $("#d").text(q.d);
-    ans = q.ans;
-    $(".option").removeClass("gray");
-    $(".option").removeClass("green");
+    ans = q.answer;
+    window.alert(ans);
+    $(".option").removeClass("btn btn-light");
+    $(".option").removeClass("btn btn-success");
     $(".nextone").hide();
   });
 }
 //檢查答案
 function answerQuestion(){
-  var playerans = $(this).attr("id");
+
+  var playerans = a;
+  window.alert(playerans);
   if(playerans == ans){
     score+=10;
+    window.alert(score);
     $(document).ready(function(){
-      $(this).addclass("green");
+      $(this).addclass("btn btn-success");
     });
     
   }else{
     $(document).ready(function(){
-      $(this).addclass("gray");
+      $(this).addclass("btn btn-light");
     });
   }
   if(counter>=10){
-    Gameover();
+    //Gameover();
+      $('.nextone').addclass("btn btn-success");
+
   }else{
     $(document).ready(function(){
       $('.nextone').show();
@@ -55,6 +66,105 @@ function answerQuestion(){
 function Gameover(){
   
 }
-
-  
-
+      var questions = [
+    { content: "#1 哆啦A夢最喜愛的食物是？", a: "鯛魚燒", b: "銅鑼燒", c: "豬血糕", d: "老鼠", answer: "b" },
+    { content: "#2 「鱟」在生物學上的分類？", a: "節肢動物門", b: "腔腸動物門", c: "軟體動物門", d: "棘皮動物門", answer: "a" },
+    { content: "#3 「大蘋果」是哪一個城市的名稱？", a: "巴黎", b: "紐約", c: "東京", d: "香港", answer: "b" },
+    { content: "#4 電影終極殺陣2(Taxi2)中，男主角向女主角爸爸謊稱他是？", a: "警察", b: "老師", c: "醫科學生", d: "消防員", answer: "b" },
+    { content: "#5 白煮蛋正確的煮法是？", a: "放在枕頭下孵七七四十九天", b: "先水滾，後放蛋", c: "先放蛋，後滾水", d: "詢問劉昂星", answer: "c" },
+    { content: "#6 鄭經治台時，改國號為什麼國？", a: "鄭經", b: "西寧", c: "東寧", d: "高砂", answer: "c" },
+    { content: "#7 (猜一個字)目加兩點莫作貝字猜？", a: "員", b: "昔", c: "賀", d: "苜", answer: "c" },
+    { content: "#8 日本名著的明治神宮，位於？", a: "山形", b: "東京", c: "大阪", d: "神戶", answer: "b" },
+    { content: "#9 地球目前總共有幾個自然衛星？", a: "數十萬個", b: "難以計算", c: "一個", d: "數百萬個", answer: "c" },
+    { content: "#10 水稻的子葉是屬於？", a: "單子葉", b: "雙子葉", c: "多子葉", d: "三子葉", answer: "a" },
+    { content: "#11 具有公信力的調解委員會設置於何者？", a: "縣市議會", b: "警察局", c: "地方法院", d: "鄉鎮市區公所", answer: "d" },
+    { content: "#12 歌劇「費加洛婚禮」為何者作品？", a: "莫札特", b: "貝多芬", c: "巴哈", d: "柴可夫斯基", answer: "a" },
+    { content: "#13 水溫降到攝氏幾度以下會結冰？", a: "20", b: "30", c: "0", d: "10", answer: "c" },
+    { content: "#14 電影少林足球中，大師兄的武功？", a: "鬼影擒拿手", b: "無堅不摧鐵頭功", c: "金鐘罩鐵布衫", d: "風火地堂腿", answer: "b" },
+    { content: "#15 被稱為“第七藝術”的是？", a: "馬戲團", b: "話劇", c: "電影", d: "電視", answer: "b" },
+    { content: "#16 「點秋江白鷺沙鷗，傲殺人間萬戶侯，不識字煙波釣叟。」出自何者？", a: "白樸", b: "馬致遠", c: "關漢卿", d: "鄭光祖", answer: "a" },
+    { content: "#17 著有道德經，為道家始祖的是？", a: "李鼻", b: "李斯", c: "李威", d: "李耳", answer: "d" },
+    { content: "#18 十三行文化遺址在台北縣哪裡發現？", a: "八里", b: "陽明山", c: "淡水", d: "五股", answer: "a" },
+    { content: "#19 請問一般推論中，塔羅牌是首先出現在哪一個國家？", a: "西班牙", b: "法國", c: "奧匈帝國", d: "義大利", answer: "d" },
+    { content: "#20 高氣壓在北半球的流動方向？", a: "向南", b: "不一定", c: "順時針", d: "逆時針", answer: "c" },
+    { content: "#21 梁朝偉的英文名字？", a: "Rick", b: "Leon", c: "Simon", d: "Tony", answer: "d" },
+    { content: "#22 電影「失落的帝國」是以哪一個古文明背景拍攝的？", a: "亞特蘭提斯", b: "波斯", c: "瑪雅", d: "埃及", answer: "a" },
+    { content: "#23 少量白雲母，最可能之火成岩種類為何？", a: "花崗岩", b: "輝長岩", c: "橄欖岩", d: "玄武岩", answer: "a" },
+    { content: "#24 根據選罷法規定，選舉時，政黨的得票率要達到百分之多少，才能參予全國不分區當選名額分配？", a: "百分之五", b: "百分之二十", c: "百分之十", d: "百分之七", answer: "a" },
+    { content: "#25 臭氧層的臭氧減少的主因是下列何種化合物？", a: "二氧化氮", b: "氯氧化合勿", c: "氟氯碳化物", d: "二氧化碳", answer: "c" },
+    { content: "#26 「入木三分」這句成語是來自於誰的故事？", a: "張旭", b: "王羲之", c: "郭璞", d: "陸游", answer: "b" },
+    { content: "#27 在哈利波特小說中不會魔法的人稱為？", a: "小黃瓜", b: "南瓜", c: "麻瓜", d: "絲瓜", answer: "c" },
+    { content: "#28 鐵人三項比賽中，自行車項目的距離為幾公里？", a: "30", b: "20", c: "10", d: "40", answer: "d" },
+    { content: "#29 衛生署公佈民國九十一年國人十大死因第三名為？", a: "癌症", b: "糖尿病", c: "心臟疾病", d: "腦血管疾病", answer: "b" },
+    { content: "#30 「泊秦准」「商女不知亡國恨，隔江猶唱後庭花」出自何者？", a: "李白", b: "杜牧", c: "杜甫", d: "王維", answer: "c" },
+    { content: "#31 希臘神話中一年有幾季？", a: "四", b: "三", c: "二", d: "一", answer: "b" },
+    { content: "#32 梁朝偉1987年獲香港第6屆電影金像獎最佳男主角獎的作品是？", a: "青春差事", b: "人民英雄", c: "地下情", d: "悲情城市", answer: "b" },
+    { content: "#33 卡通櫻桃小丸子中總是噗個不停的是？", a: "山田", b: "永澤", c: "花輪", d: "豬太郎", answer: "d" },
+    { content: "#34 豬籠草和毛氈苔主要藉由捕食昆蟲以獲得該地區缺乏的何種營養素？", a: "鐵", b: "氮", c: "鉀", d: "碳", answer: "b" },
+    { content: "#35 二次大戰期間的諾曼第登陸，發生在哪一個國家？", a: "法國", b: "美國", c: "西班牙", d: "荷蘭", answer: "a" },
+    { content: "#36 請問下列何者是台中的名產？", a: "阿給", b: "太陽餅", c: "臭豆腐", d: "鴨賞", answer: "b" },
+    { content: "#37 科學小飛俠的隊長是？", a: "阿龍", b: "鐵雄", c: "珍珍", d: "大明", answer: "b" },
+    { content: "#38 加入ENERGY前，誰背著吉他唱過民歌餐廳？", a: "書偉", b: "坤達", c: "牛奶", d: "TORO", answer: "a" },
+    { content: "#39 畫家馬諦斯為何國人？", a: "法國", b: "英國", c: "德國", d: "丹麥", answer: "a" },
+    { content: "#40 雷鳥主要住在哪裡？", a: "平地", b: "盆地", c: "高山", d: "海邊", answer: "c" },
+    { content: "#41 下列何者不是印象派的畫家？", a: "畢沙羅", b: "米開朗基羅", c: "雷諾瓦", d: "莫內", answer: "b" },
+    { content: "#42 請問下列何者是宜蘭的名產？", a: "太陽餅", b: "阿給", c: "鴨賞", d: "臭豆腐", answer: "c" },
+    { content: "#43 電影「工夫」中，周星馳花了多少錢買了武功秘笈？", a: "2$", b: "5$", c: "20$", d: "10$", answer: "d" },
+    { content: "#44 行人過馬路的小綠人跑步號誌，是哪裡發明的？", a: "台灣", b: "英國", c: "新加波", d: "法國", answer: "a" },
+    { content: "#45 言承旭本名？", a: "廖余震", b: "廖昂震", c: "廖堯震", d: "廖洋震", answer: "d" },
+    { content: "#46 我們俗稱的苛性鈉是？", a: "硫酸鈉", b: "碳酸鈉", c: "碳酸氫鈉", d: "氫氧化鈉", answer: "d" },
+    { content: "#47 胃酸的主要成分是？", a: "鹽酸", b: "硫酸", c: "檸檬酸", d: "胺基酸", answer: "a" },
+    { content: "#48 蒙古人統一中國時，世居西域一帶最有可能是什麼階級的人？", a: "蒙古人", b: "色目人", c: "南人", d: "漢人", answer: "b" },
+    { content: "#49 第一位在日本職棒得到百戰百勝救援的台灣投手？", a: "郭泰源", b: "莊勝雄", c: "郭源治", d: "陳義信", answer: "c" },
+    { content: "#50 綠島的溫泉，是屬於哪種溫泉？", a: "平原", b: "海底", c: "洞穴", d: "高山", answer: "b" },
+    { content: "#51 世界最大的貓科動物？", a: "孟加拉虎", b: "西伯利亞虎", c: "非洲獅", d: "美洲豹", answer: "b" },
+    { content: "#52 日劇大和拜金女的女主角職業？", a: "空姐", b: "工程師", c: "銀行員", d: "護士", answer: "a" },
+    { content: "#53 下列何者不是日本室町時代的繪畫作品？", a: "三條殿夜討卷", b: "竹齋讀書圖", c: "四季山水圖卷", d: "瓢鯰圖", answer: "a" },
+    { content: "#54 三國演義中的空城計，空城指的是哪一個縣？", a: "東城", b: "西城", c: "桐城", d: "當陽", answer: "b" },
+    { content: "#55 何者能幫助血液凝結？", a: "維他命D", b: "維他命C", c: "維他命A", d: "維他命K", answer: "d" },
+    { content: "#56 人體內由肝臟分泌的膽汁，顏色是？", a: "藍黑色", b: "黃綠色", c: "紅色", d: "紅褐色", answer: "b" },
+    { content: "#57 請問四角柱有幾個面？", a: "6", b: "5", c: "4", d: "3", answer: "a" },
+    { content: "#58 清朝時的地名「蛤仔難」位於今日台灣何縣市？", a: "台南", b: "桃園", c: "宜蘭", d: "台東", answer: "c" },
+    { content: "#59 華格納的歌劇「尼貝龍根的指環」中，被奧丁放逐的女武神為？", a: "史維特萊德", b: "瓦爾特洛德", c: "葛琳潔德", d: "布倫希爾德", answer: "d" },
+    { content: "#60 下列著名的夜市，何者非位於台北市內？", a: "樂華夜市", b: "士林夜市", c: "饒河夜市", d: "寧夏夜市", answer: "a" },
+    { content: "#61 蛇常常吐舌頭，是為了？", a: "散熱", b: "找尋獵物", c: "幫助移動", d: "幫助呼吸", answer: "b" },
+    { content: "#62 同時擔任電影【心動】的編劇導演，是哪一位知名的導演？", a: "張艾嘉", b: "李安", c: "蔡明亮", d: "王家衛", answer: "a" },
+    { content: "#63 藝人孫燕姿是哪一國人？", a: "馬來西亞", b: "新加波", c: "印尼", d: "香港", answer: "b" },
+    { content: "#64 下列何者不是中國古代四大發明？", a: "指南針", b: "火藥", c: "占星", d: "印刷", answer: "c" },
+    { content: "#65 職訓中心主要是為了協助何者就業？", a: "欠缺工作能力者", b: "缺少工作意願者", c: "沒有工作需要者", d: "缺乏求職行動者", answer: "a" },
+    { content: "#66 日本的警察階級，哪一個比較大？", a: "警視正", b: "警視", c: "警視長", d: "警部", answer: "c" },
+    { content: "#67 目前已知地球海洋最大的深度為幾公尺？", a: "5500m", b: "22000m", c: "11000m", d: "8800m", answer: "c" },
+    { content: "#68 西洋人所稱呼的淑女蟲是指？", a: "蠶", b: "蟬", c: "瓢蟲", d: "蜻蜓", answer: "c" },
+    { content: "#69 電影「工夫」中，周星馳去監獄救誰出來？", a: "火雲邪神", b: "包祖公", c: "包祖婆", d: "啞巴女", answer: "a" },
+    { content: "#70 清廷經營台灣，下列哪一個行政區最晚設立？", a: "彰化縣", b: "諸羅縣", c: "噶瑪蘭廳", d: "淡水廳", answer: "c" },
+    { content: "#71 演過我的祕密花園、吐司男之吻等劇的男藝人？", a: "陳道明", b: "顏行書", c: "張天霖", d: "孫協志", answer: "c" },
+    { content: "#72 請問三角錐有幾個面？", a: "3", b: "6", c: "5", d: "4", answer: "d" },
+    { content: "#73 西漢哪位名將有一位皇后姐姐？", a: "霍去病", b: "衛青", c: "李廣", d: "李陵", answer: "b" },
+    { content: "#74 欲查詢天氣時，可電話直播幾號查詢？", a: "166", b: "109", c: "106", d: "149", answer: "a" },
+    { content: "#75 請問梅雨的形成主要原因？", a: "溫度升高", b: "季節交替", c: "溫差過大", d: "149", answer: "c" },
+    { content: "#76 下列哪一種岩石被認定具有較佳的孔隙率和較好的滲透率，故被認定為它能形成重要的儲油層？", a: "砂岩", b: "大理岩", c: "花崗岩", d: "頁岩", answer: "a" },
+    { content: "#77 近年來被刪除在太陽系外的行星是？", a: "海王星", b: "土星", c: "冥王星", d: "天王星", answer: "c" },
+    { content: "#78 吹泡泡時候要？", a: "用力吹", b: "向上吹", c: "輕輕吹", d: "全部皆是", answer: "d" },
+    { content: "#79 混合氣體之壓力為各氣體分壓之總合，稱為？", a: "亨利定律", b: "道爾吞定律", c: "波以耳定律", d: "理想氣體定律", answer: "b" },
+    { content: "#80 請問颱風登陸或出現最大風速的時候總是在哪個時間？", a: "不一定", b: "晚上", c: "凌晨", d: "下午", answer: "a" },
+    { content: "#81 周星馳剛從演員訓練班結訓後，曾主持過香港哪個兒童節目？", a: "大豆與小豆", b: "魔法ABC", c: "小鬼阿星", d: "四三零穿梭機", answer: "d" },
+    { content: "#82 請問尋秦記的作者是？", a: "黃易", b: "劉定堅", c: "古龍", d: "金庸", answer: "a" },
+    { content: "#83 周星馳曾是香港TVB第幾期訓練班的學員？", a: "11", b: "10", c: "9", d: "12", answer: "a" },
+    { content: "#84 大陸地區的飯店，早上提供morningcall服務，在大陸叫什麼？", a: "電call", b: "叫床", c: "叫人", d: "叫床號", answer: "b" },
+    { content: "#85 MickeyMouse的生日是幾號？", a: "8月18日", b: "11月18日", c: "9月18日", d: "10月18日", answer: "b" },
+    { content: "#86 中華職棒史上首位百全壘打、百盜壘的球員？", a: "林易增", b: "張泰山", c: "林仲秋", d: "陳致遠", answer: "b" },
+    { content: "#87 「但願人長久，千里共嬋娟。」出自蘇軾的何首作品？", a: "水龍吟", b: "念奴嬌", c: "賀新郎", d: "水調歌頭", answer: "d" },
+    { content: "#88 哪隻不是暴力昆蟲？", a: "行軍蟻", b: "黑寡婦", c: "殺人蜂", d: "日本大黃蜂", answer: "b" },
+    { content: "#89 「遊子吟」「慈母手中線，遊子身上衣」出自何者？", a: "李白", b: "韋應物", c: "孟浩然", d: "孟郊", answer: "d" },
+    { content: "#90 雄蟬和雌蟬交配時，身體呈現什麼形狀？", a: "一字型", b: "V字型", c: "S字型", d: "I字型", answer: "b" },
+    { content: "#91 何者屬於台灣原住民的節慶活動？", a: "放水燈", b: "豐年祭", c: "載香包", d: "跳童乩", answer: "b" },
+    { content: "#92 地球與月球的距離約可排下幾個地球？", a: "30", b: "20", c: "40", d: "10", answer: "a" },
+    { content: "#93 有「水果之王」美名的，是哪一種水果？", a: "柳丁", b: "蘋果", c: "榴槤", d: "西瓜", answer: "c" },
+    { content: "#94 體積固定時，加壓時溫度會上升，減壓則相反，稱為？", a: "亨利定律", b: "理想氣體定律", c: "道爾吞定律", d: "查爾斯定律", answer: "d" },
+    { content: "#95 佛家說的「四大皆空」，四大指的是地、水、火以及？", a: "風", b: "金", c: "銀", d: "木", answer: "a" },
+    { content: "#96 請問三角柱有幾個面？", a: "5", b: "4", c: "3", d: "2", answer: "a" },
+    { content: "#97 地球與太陽之間的距離有多少公里？", a: "一億", b: "五千萬", c: "二億五千萬", d: "一億五千萬", answer: "d" },
+    { content: "#98 奧運射箭項目的箭靶有幾個得分區？", a: "8", b: "5", c: "10", d: "6", answer: "c" },
+    { content: "#99 一個圓形對折三次，請問分成幾等份？", a: "4", b: "8", c: "5", d: "2", answer: "b" },
+    { content: "#100 「山中相送罷，日暮掩柴扉，春草年年綠，王孫歸不歸」出自何者？", a: "李商隱", b: "杜甫", c: "王維", d: "李白", answer: "c" }
+]
