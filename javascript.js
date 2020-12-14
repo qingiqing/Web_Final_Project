@@ -63,6 +63,7 @@ function answerQuestion(){
 }
 
 
+
     var questions = [
     { content: "#1 是誰住在深海的大鳳梨裡？", a: "海綿寶寶", b: "海綿體寶寶", c: "海藻寶寶", d: "海龜寶寶", answer: "a" },
     { content: "#2 中國的天干以及地支一直都還對我們的生活有著影響，請問天干地支加起來一共有多少個？", a: "22", b: "24", c: "87", d: "6666666", answer: "a" },
@@ -116,4 +117,24 @@ function answerQuestion(){
     { content: "#42 (輔大)請問SF645PC房的電腦螢幕是哪一個牌子？", a: "hp", b: "acer", c: "sony", d: "asus rog", answer: "a" },
     { content: "#43 (輔大)請問下列心園鬆餅組合的價格最高？", a: "德州烤雞腿鬆餅+綠茶", b: "功夫雞腿鬆餅+無糖綠茶", c: "鮮奶油黑可可鬆餅+奶茶", d: "蜂蜜鮮奶油鬆餅+奶綠", answer: "c" },
 ]
-© 2020 GitHub, Inc.
+
+$(document).ready(function(){
+    $("#button1").click(function(){
+      $("#p1").fadeToggle("slow");
+    });
+    $("#button2").click(function(){
+      $("#p2").fadeToggle("slow");
+    });
+    $("#button3").click(function(){
+      $("#p3").fadeToggle("slow");
+    });
+    $("#example").click(function(){
+      $("#gif").fadeToggle("slow");
+    });
+    $("#button4").click(function(){
+      $("#p4").fadeToggle("slow");
+    });
+    $("#button5").click(function(){
+      $("#p5").fadeToggle("slow");
+    });
+  });
