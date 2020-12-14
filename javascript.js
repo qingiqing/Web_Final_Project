@@ -62,10 +62,7 @@ function answerQuestion(){
   }
 }
 
-//遊戲結束
-function Gameover(){
-  
-}
+
       var questions = [
     { content: "#1 哆啦A夢最喜愛的食物是？", a: "鯛魚燒", b: "銅鑼燒", c: "豬血糕", d: "老鼠", answer: "b" },
     { content: "#2 「鱟」在生物學上的分類？", a: "節肢動物門", b: "腔腸動物門", c: "軟體動物門", d: "棘皮動物門", answer: "a" },
