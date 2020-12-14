@@ -17,7 +17,59 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
 </head>
+
+<style type="text/css">
+#container {
+  color: white;
+  font-family: Consolas;
+  position: relative;
+  text-align: left;
+  width: 1000px;
+  height: 500px;
+  padding: 0px 0px 1300px 0px;
+  margin: 0px auto;
+  background: rgba(255, 255, 255,0.0);
+
+}
+
+#back{
+  text-align: right;
+  position: fixed; 
+  bottom: 0; 
+  right: 0;
+}
+
+</style>
+
 <body style="background-color: #010639;">
-  <marquee SCROLLAMOUNT="7" class="ex1"><div style="color:#FFF; margin-top: 5px; ">輔仁大學資工學系Web基本原理與技術期末專題</div></marquee>
+  <marquee SCROLLAMOUNT="7" class="ex1">
+    <div style="color:#FFF; margin-top: 5px; ">輔仁大學資工學系Web基本原理與技術期末專題</div>
+  </marquee>
+
+  <div id = "container">
+    <marquee id ="marquee1" behavior="slide" SCROLLAMOUNT="5" direction="up">
+      <center>
+        <div style="color: #FFF" >
+          <div style="font-size: 100px">
+            知識王規則
+          </div>
+          <pre>
+            <div style="color: #FFF; font-size: 30px">點擊開始即開始遊戲，
+  總共10題, 
+  每題共有4個選項，
+  只有一個正確答案，
+  答對得10分，
+  答錯不扣分，
+  看看你們最終能得到幾分。
+            </div>
+          </pre>
+        </div>
+      </center>
+    </marquee>
+  </div>
+
+ <div id ="back"> <p><button onclick="location.href='index.html';">返回<img src="https://i.imgur.com/qez0vf2.png" weight = "50" height = "50"></button></p> </div>
+
+
 </body>
 </html>
