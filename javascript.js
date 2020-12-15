@@ -121,6 +121,7 @@ function answerQuestion(){
     });
   }
 }
+
 function Gameover(){
    $(document).ready(function(){
       $('.end').show(function(){
@@ -139,8 +140,9 @@ function Gameover(){
       });
   });
 }
- //problem
+
     var questions = [
+
     { content: " 是誰住在深海的大鳳梨裡？", a: "海綿寶寶", b: "海綿體寶寶", c: "海藻寶寶", d: "海龜寶寶", answer: "a" },
     { content: " 中國的天干以及地支一直都還對我們的生活有著影響，請問天干地支加起來一共有多少個？", a: "22", b: "24", c: "87", d: "6666666", answer: "a" },
     { content: " 請問史記的作者是誰？", a: "司馬中原", b: "司馬光", c: "司馬遷", d: "司馬相如", answer: "c" },
@@ -190,6 +192,7 @@ function Gameover(){
     { content: " (輔大)請問輔大最後一個鐘聲是幾點？", a: "22:00", b: "22:10", c: "23:00", d: "23:10", answer: "b" },
     { content: " (輔大)請問下列哪一家學餐的一顆高麗菜煎餃最便宜？", a: "仁園", b: "輔園", c: "心園", d: "理園", answer: "b" },
     { content: " (輔大)騎腳踏車進入正門時，腳踏車車道(機車道)位於兩個汽車車道的？", a: "左邊", b: "中間", c: "右邊", d: "正下方", answer: "b" },
+
 ]
 
 

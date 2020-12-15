@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# lab05
-=======
 # Web_Final_Project
 
 
@@ -8,8 +5,8 @@
 ## 知識王
 ### 遊戲主題
 
-![知識王](https://koding.school/projects/2pdsj35w/edit)
-![小畫家](https://wcc723.github.io/canvas/2014/12/09/html5-canvas-03/)
+>[知識王](https://koding.school/projects/2pdsj35w/edit)
+>[小畫家](https://wcc723.github.io/canvas/2014/12/09/html5-canvas-03/)
   
 ### 前端
 - html
