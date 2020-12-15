@@ -17,6 +17,9 @@ $(document).ready(function(){
     showQuestion();
   });
 });
+// $(document).ready(function()){
+
+// }
 //顯示題目
 function showQuestion(){
   var random = Math.floor(Math.random()*questions.length);
