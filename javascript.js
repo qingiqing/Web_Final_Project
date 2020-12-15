@@ -116,10 +116,7 @@ function answerQuestion(){
     });
   }
 }
-<<<<<<< HEAD
-=======
 
->>>>>>> qingqing
 function Gameover(){
    $(document).ready(function(){
       $('.end').show(function(){
