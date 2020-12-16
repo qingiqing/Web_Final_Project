@@ -1,64 +1,69 @@
 .ttl{
       font-family: 'Noto Sans TC', sans-serif;
-      font-size: 5rem;
+      font-size: 550%;
       text-align:center;
-      margin-bottom: 35px;
       background-image: -webkit-linear-gradient(#FD1701, #FDF704,#FD1701);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 }
-.ex{
-  background-color:#000;
-  height: 50px;
-  padding:10px;
-  border:solid 1px #c3c3c3;
-  margin-top: 20px;
-  font-size: 30px;
-}
+
 .ex1{
   background-color:#000;
-  height: 70px;
-  padding:10px;
+  padding:1%;
   border:solid 1px #c3c3c3;
-  margin-top: 20px;
-  font-size: 30px;
+  font-size: 145%;
+  font-family: 'Noto Sans TC', sans-serif;
 }
 button{
   font-family: 'Noto Sans TC', sans-serif;
-   font-size: 3.5rem;
+   font-size: 350%;
    border-radius: 20px;
    cursor: pointer;
 }
-.content1{
+
+.Q1{
     font-family: 'Noto Sans TC', sans-serif;
-    font-size: 3rem;
-    color: #000;
+    font-size: 550%;
+    color: #FFF;
+    top: 70px;
     padding: 10px;
     text-align: center;
 }
-.Q1{
+.content1{
     font-family: 'Noto Sans TC', sans-serif;
-    font-size: 5rem;
-    color: #000;
+    font-size: 250%;
+    color: #FFF;
     top: 70px;
     padding: 10px;
     text-align: center;
 }
 .option {
+  font-family: 'Noto Sans TC', sans-serif;
     padding: 10px;
-    width:200px;
+    width:100%;
+    height: 50%;
     display: block;
-    font-size: 3.5rem;
+    font-size: 275%;
     text-align: center;
 }
 .nextone{
+  font-family: 'Noto Sans TC', sans-serif;
   align-self: center;
   width: 20rem;
-  height: 7rem;
+  height: 6rem;
+  font-size: 3.5rem;
+  border-radius: 20px;
+}
+.nextone1{
+  font-family: 'Noto Sans TC', sans-serif;
+  align-self: center;
+  width: 20rem;
+  height: 6rem;
   font-size: 3.5rem;
   border-radius: 20px;
 }
 .end{
+  font-family: 'Noto Sans TC', sans-serif;
   align-self: center;
   width: 20rem;
   font-size: 3.5rem;
@@ -66,10 +71,8 @@ button{
 }
 #marquee1{
     font-family: 'Noto Sans TC', sans-serif;
-    font-size: 25px;
-    color: #FFF;
+    color: #000;
     text-align: center;
-    /*background-color: #000;*/
     height: 500px;
     width: 100%;
 }
@@ -77,7 +80,7 @@ button{
   {
     background-color:#949ADD ;
     font-family: 'Noto Sans TC', sans-serif;
-    font-size: 75%;
+    font-size: 160%;
     line-height: 24px;
     padding:7px;
     border:solid 1px #c3c3c3;
@@ -85,11 +88,22 @@ button{
     border-radius: 20px;
     margin-bottom: 15px;
   }
-  .score{
+.score{
   font-family: 'Noto Sans TC', sans-serif;
    font-size: 10rem;
-  }
-
+}
+/* source & rule content*/
+.scrc{
+  color: #FFF;
+  font-size: 225%;
+  font-family: 'Noto Sans TC', sans-serif; 
+}
+/*about us content*/
+.abc{
+  color: #000;
+  font-size: 225%;
+  font-family: 'Noto Sans TC', sans-serif; 
+}
 /*.shadow{
         text-align:center;
         font-family: 'Press Start 2P', cursive;

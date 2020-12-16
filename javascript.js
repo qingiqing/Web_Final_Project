@@ -2,6 +2,32 @@ var ans; //紀錄答案
 var counter = 0 //紀錄作答題數
 var score = 0; //分數
 var a; //紀錄作答答案
+var ad;
+$(document).ready(function(){
+  $("#content").hide();
+  $(".nextone").hide();
+  $(".nextone1").hide();
+  $(".end").hide();
+  $(".return").hide();
+  $("#a").hide();
+  $("#b").hide();
+  $("#c").hide();
+  $("#d").hide();
+  $(".question").show(function(){
+    $(".question").click(function(){
+      showQuestion();
+      $(".question").hide();
+      $(".FJCUquestion").hide();
+    });
+  });
+  $(".FJCUquestion").show(function(){
+    $(".FJCUquestion").click(function(){
+      showFJCUQuestion();
+      $(".question").hide();
+      $(".FJCUquestion").hide();
+    });
+  });
+});
 $(document).ready(function(){
   $(".end").hide();
   $(".return").hide();
@@ -18,6 +44,11 @@ $(document).ready(function(){
   });
 });
 $(document).ready(function(){
+  $('.nextone1').click(function(){
+    showFJCUQuestion();
+  });
+});
+$(document).ready(function(){
   $("#a").attr('disabled', true);
   $("#b").attr('disabled', true);
   $("#c").attr('disabled', true);
@@ -27,10 +58,17 @@ $(document).ready(function(){
 
 //顯示題目
 function showQuestion(){
+  ad = 1;
   var random = Math.floor(Math.random()*questions.length);
   var q = questions.splice(random,1)[0];
   counter+=1;
   $(document).ready(function(){
+    $("#counter").show();
+    $("#content").show();
+    $("#a").show();
+    $("#b").show();
+    $("#c").show();
+    $("#d").show();
     $("#counter").text("Question: " + counter);
     $("#content").text(q.content);
     $("#a").text(q.a);
@@ -38,18 +76,67 @@ function showQuestion(){
     $("#c").text(q.c);
     $("#d").text(q.d);
     ans = q.answer;
-    $(".option").removeClass(" btn-secondary");
+    $(".option").removeClass(" btn-danger");
     $(".option").removeClass(" btn-success");
     $("#a").attr('disabled', false);
     $("#b").attr('disabled', false);
     $("#c").attr('disabled', false);
     $("#d").attr('disabled', false);
     $(".nextone").hide();
+    $(".nextone1").hide();
+  });
+}
+function showFJCUQuestion(){
+  ad = 2;
+  var random = Math.floor(Math.random()* fjcuquestions.length);
+  var q = fjcuquestions.splice(random,1)[0];
+  counter+=1;
+  $(document).ready(function(){
+    $("#counter").show();
+    $("#content").show();
+    $("#a").show();
+    $("#b").show();
+    $("#c").show();
+    $("#d").show();
+    $("#counter").text("Question: " + counter);
+    $("#content").text(q.content);
+    $("#a").text(q.a);
+    $("#b").text(q.b);
+    $("#c").text(q.c);
+    $("#d").text(q.d);
+    ans = q.answer;
+    $(".option").removeClass(" btn-danger");
+    $(".option").removeClass(" btn-success");
+    $("#a").attr('disabled', false);
+    $("#b").attr('disabled', false);
+    $("#c").attr('disabled', false);
+    $("#d").attr('disabled', false);
+    $(".nextone").hide();
+    $(".nextone1").hide();
   });
 }
 //檢查答案
 function answerQuestion(){
   var playerans = a;
+    if(ans == 'a'){
+      $(document).ready(function(){
+        $("#a").addClass(" btn-success");
+     });
+    }else if(ans == 'b'){
+      $(document).ready(function(){
+        $("#b").addClass(" btn-success");
+      });
+    }else if(ans == 'c'){
+      $(document).ready(function(){
+        $("#c").addClass(" btn-success");
+      });
+    }else if(ans == 'd'){
+      $(document).ready(function(){
+        $("#d").addClass(" btn-success");
+      });
+    }
+  
+
   if(playerans == ans){
     score+=10;
     if(playerans == 'a'){
@@ -84,28 +171,28 @@ function answerQuestion(){
   }else{
     if(playerans == 'a'){
       $(document).ready(function(){
-        $("#a").addClass(" btn-secondary");
+        $("#a").addClass(" btn-danger");
         $("#b").attr('disabled', true);
         $("#c").attr('disabled', true);
         $("#d").attr('disabled', true);
      });
     }else if(playerans == 'b'){
       $(document).ready(function(){
-        $("#b").addClass(" btn-secondary");
+        $("#b").addClass(" btn-danger");
         $("#a").attr('disabled', true);
         $("#c").attr('disabled', true);
         $("#d").attr('disabled', true);
       });
     }else if(playerans == 'c'){
       $(document).ready(function(){
-        $("#c").addClass(" btn-secondary");
+        $("#c").addClass(" btn-danger");
         $("#a").attr('disabled', true);
         $("#b").attr('disabled', true);
         $("#d").attr('disabled', true);
       });
     }else if(playerans == 'd'){
       $(document).ready(function(){
-        $("#d").addClass(" btn-secondary");
+        $("#d").addClass(" btn-danger");
         $("#a").attr('disabled', true);
         $("#b").attr('disabled', true);
         $("#c").attr('disabled', true);
@@ -116,8 +203,17 @@ function answerQuestion(){
       Gameover(score);
   }else{
     $(document).ready(function(){
-      $('.nextone').show();
+      if(ad == 1)
+      {
+         $('.nextone').show();
       $('.nextone').text("NEXT");
+      }
+     else
+     {
+      $('.nextone1').show();
+      $('.nextone1').text("NEXT");
+     }
+      
     });
   }
 }
@@ -168,6 +264,32 @@ function Gameover(){
     { content: " 正式的比賽級羽球，通常每顆有幾支羽毛？", a: "16", b: "87", c: "12", d: "20", answer: "a" },
     { content: " 請問10:27時，時鐘時針和分針夾角為幾度？", a: "150", b: "875", c: "151.5", d: "151.87", answer: "c" },
     { content: " 請問Kahoot的選項沒有出現以下哪種圖形？", a: "三角形", b: "圓形", c: "星型", d: "正方形", answer: "c" },
+    // { content: " (輔大)如果以爬樓梯的方式從濟時樓二樓到濟時樓三樓，共需爬幾階樓梯？", a: "18", b: "20", c: "23", d: "32", answer: "b" },
+    // { content: " (輔大)請問聖言樓PC房(645教室)，共有幾台電腦？(包含講師的電腦)", a: "60", b: "62", c: "65", d: "66", answer: "c" },
+    // { content: " (輔大)請問SF645PC房的電腦的處理器的型號？", a: "i5-8700", b: "i7-8700", c: "i5-8750", d: "i5-8500", answer: "d" },
+    // { content: " (輔大)請問SF645PC房的電腦螢幕是哪一個牌子？", a: "hp", b: "acer", c: "sony", d: "asus rog", answer: "a" },
+    // { content: " (輔大)請問下列心園鬆餅組合的價格最高？", a: "德州烤雞腿鬆餅+綠茶", b: "功夫雞腿鬆餅+無糖綠茶", c: "鮮奶油黑可可鬆餅+奶茶", d: "蜂蜜鮮奶油鬆餅+奶綠", answer: "c" },
+    // { content: " (輔大)請問下列哪個顏色不是組成輔大建築物的顏色?", a: "藍白色", b: "灰色", c: "白色", d: "藍綠色", answer: "d" },
+    // { content: " (輔大)請問下大雨時輔大會出現甚麼？", a: "中美湖", b: "聖言湖", c: "德芳湖", d: "尼斯湖", answer: "a" },
+    // { content: " (輔大)請問輔大附近比例最少的便利商店？", a: "7-11", b: "全家", c: "OK", d: "萊爾富", answer: "c" },
+    // { content: " (輔大)輔大大門口的賣場？", a: "好市多", b: "IKEA", c: "家樂福", d: "全聯", answer: "d" },
+    // { content: " (輔大)輔大校旗中的「字」以及「背景」共由三種顏色組成，其中並不包含？", a: "白色", b: "紅色", c: "黃色", d: "黑色", answer: "d" },
+    // { content: " (輔大)輔大目前共計有幾個學院？", a: "10", b: "12", c: "15", d: "16", answer: "b" },
+    // { content: " (輔大)輔大的「校級圖書館」，共有幾個？", a: "2", b: "3", c: "4", d: "5", answer: "b" },
+    // { content: " (輔大)現任校長的名字？", a: "江漢聲", b: "黎建球", c: "李寧遠", d: "楊敦和", answer: "a" },
+    // { content: " (輔大)目前共有幾個學生宿舍？", a: "5", b: "6", c: "7", d: "8", answer: "c" },
+    // { content: " (輔大)目前共有幾個學生餐廳？", a: "3", b: "4", c: "5", d: "6", answer: "c" },
+    // { content: " (輔大)請問輔大的校慶在？", a: "12/6", b: "12/7", c: "12/8", d: "12月第一個星期六", answer: "c" },
+    // { content: " (輔大)請問「法園」的教室代號？", a: "SV", b: "SB", c: "SM", d: "SS", answer: "d" },
+    // { content: " (輔大)請問傳說中在進學校後第幾個聖誕節前沒有脫魯就會魯四年的傳說？", a: "第一個聖誕節", b: "第二個聖誕節", c: "第三個聖誕節", d: "你連聖誕節都沒人陪你過", answer: "b" },
+    // { content: " (輔大)位於側門明日之星餐廳的椒麻雞店，如果跟老闆說「我要一份隱藏」，老闆會？", a: "多給你一樣當季蔬菜", b: "多給你一樣當季蔬菜", c: "給你一半椒麻雞一半油雞", d: "覺得你是肖ㄟ", answer: "c" },
+    // { content: " (輔大)以下何者不是食科冰淇淋曾經出過的口味？", a: "綠豆沙鹹蛋黃", b: "起司香蕉", c: "咖啡奶酒", d: "奇異果優格", answer: "d" },
+    // { content: " (輔大)在濟時樓待到閉館時，除了會聽到來自圖書館員的提醒，還會聽到哪首歌？", a: "輔大校歌", b: "聖歌:我最愛的你", c: "晚安曲(費玉清)", d: "每天播的不一樣", answer: "b" },
+    // { content: " (輔大)請問輔大最後一個鐘聲是幾點？", a: "22:00", b: "22:10", c: "23:00", d: "23:10", answer: "b" },
+    // { content: " (輔大)請問下列哪一家學餐的一顆高麗菜煎餃最便宜？", a: "仁園", b: "輔園", c: "心園", d: "理園", answer: "b" },
+    // { content: " (輔大)騎腳踏車進入正門時，腳踏車車道(機車道)位於兩個汽車車道的？", a: "左邊", b: "中間", c: "右邊", d: "正下方", answer: "b" },
+ ]
+var fjcuquestions =[
     { content: " (輔大)如果以爬樓梯的方式從濟時樓二樓到濟時樓三樓，共需爬幾階樓梯？", a: "18", b: "20", c: "23", d: "32", answer: "b" },
     { content: " (輔大)請問聖言樓PC房(645教室)，共有幾台電腦？(包含講師的電腦)", a: "60", b: "62", c: "65", d: "66", answer: "c" },
     { content: " (輔大)請問SF645PC房的電腦的處理器的型號？", a: "i5-8700", b: "i7-8700", c: "i5-8750", d: "i5-8500", answer: "d" },
@@ -176,7 +298,7 @@ function Gameover(){
     { content: " (輔大)請問下列哪個顏色不是組成輔大建築物的顏色?", a: "藍白色", b: "灰色", c: "白色", d: "藍綠色", answer: "d" },
     { content: " (輔大)請問下大雨時輔大會出現甚麼？", a: "中美湖", b: "聖言湖", c: "德芳湖", d: "尼斯湖", answer: "a" },
     { content: " (輔大)請問輔大附近比例最少的便利商店？", a: "7-11", b: "全家", c: "OK", d: "萊爾富", answer: "c" },
-    { content: " (輔大)輔大大門口的賣場？", a: "COSTCO", b: "IKEA", c: "家樂福", d: "全聯", answer: "d" },
+    { content: " (輔大)輔大大門口的賣場？", a: "好市多", b: "IKEA", c: "家樂福", d: "全聯", answer: "d" },
     { content: " (輔大)輔大校旗中的「字」以及「背景」共由三種顏色組成，其中並不包含？", a: "白色", b: "紅色", c: "黃色", d: "黑色", answer: "d" },
     { content: " (輔大)輔大目前共計有幾個學院？", a: "10", b: "12", c: "15", d: "16", answer: "b" },
     { content: " (輔大)輔大的「校級圖書館」，共有幾個？", a: "2", b: "3", c: "4", d: "5", answer: "b" },
@@ -192,7 +314,6 @@ function Gameover(){
     { content: " (輔大)請問輔大最後一個鐘聲是幾點？", a: "22:00", b: "22:10", c: "23:00", d: "23:10", answer: "b" },
     { content: " (輔大)請問下列哪一家學餐的一顆高麗菜煎餃最便宜？", a: "仁園", b: "輔園", c: "心園", d: "理園", answer: "b" },
     { content: " (輔大)騎腳踏車進入正門時，腳踏車車道(機車道)位於兩個汽車車道的？", a: "左邊", b: "中間", c: "右邊", d: "正下方", answer: "b" },
-
 ]
 
 
