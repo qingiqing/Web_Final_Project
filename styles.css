@@ -25,16 +25,16 @@ button{
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 550%;
     color: #FFF;
-    top: 70px;
-    padding: 10px;
+    /*top: 70px;*/
+    /*padding: 10px;*/
     text-align: center;
 }
 .content1{
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 250%;
     color: #FFF;
-    top: 70px;
-    padding: 10px;
+    /*top: 70px;*/
+    /*padding: 10px;*/
     text-align: center;
 }
 .option {
@@ -95,11 +95,17 @@ button{
 /* source & rule content*/
 .scrc{
   color: #FFF;
-  font-size: 225%;
-  font-family: 'Noto Sans TC', sans-serif; 
+  font-size: 250%;
+  font-family: 'Noto Sans TC', sans-serif;
+  text-align: center; 
 }
 /*about us content*/
 .abc{
+  color: #000;
+  font-size: 225%;
+  font-family: 'Noto Sans TC', sans-serif; 
+}
+.back{
   color: #000;
   font-size: 225%;
   font-family: 'Noto Sans TC', sans-serif; 

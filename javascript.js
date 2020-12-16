@@ -8,7 +8,7 @@ $(document).ready(function(){
   $(".nextone").hide();
   $(".nextone1").hide();
   $(".end").hide();
-  $(".return").hide();
+  // $(".return").show();
   $("#a").hide();
   $("#b").hide();
   $("#c").hide();
@@ -18,6 +18,7 @@ $(document).ready(function(){
       showQuestion();
       $(".question").hide();
       $(".FJCUquestion").hide();
+      $(".return").hide();
     });
   });
   $(".FJCUquestion").show(function(){
@@ -25,12 +26,13 @@ $(document).ready(function(){
       showFJCUQuestion();
       $(".question").hide();
       $(".FJCUquestion").hide();
+       $(".return").hide();
     });
   });
 });
 $(document).ready(function(){
   $(".end").hide();
-  $(".return").hide();
+  // $(".return").hide();
 });
 $(document).ready(function(){
   $('.option').click(function(){
@@ -227,7 +229,7 @@ function Gameover(){
           $("#c").hide();
           $("#d").hide();
           $("#counter").text("Your score ");
-          $("#counter").addClass("score");
+          $("#counter").addClass("score" );
           $("#content").text(score);
           $("#content").addClass("score");
           $('.end').hide();
