@@ -68,7 +68,7 @@ function updateSecs() {
     seconds--;
     document.getElementById("seconds").innerHTML = seconds;
     // seconds--;
-    if (seconds == -1) {
+    if (seconds == 0) {
       document.getElementById("seconds").innerHTML = "Time's Up";
         clearInterval(foo);
         answerQuestion();
