@@ -3,8 +3,12 @@ var counter = 0 //紀錄作答題數
 var score = 0; //分數
 var a; //紀錄作答答案
 var ad;
+var seconds = 5; // seconds for HTML
+var foo; // variable for clearInterval() function
+
 $(document).ready(function(){
   $("#content").hide();
+  $("#seconds").hide();
   $(".nextone").hide();
   $(".nextone1").hide();
   $(".end").hide();
@@ -43,11 +47,13 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.nextone').click(function(){
     showQuestion();
+    seconds = 5;
   });
 });
 $(document).ready(function(){
   $('.nextone1').click(function(){
     showFJCUQuestion();
+    seconds = 5;
   });
 });
 $(document).ready(function(){
@@ -56,17 +62,46 @@ $(document).ready(function(){
   $("#c").attr('disabled', true);
   $("#d").attr('disabled', true);
 });
-  
+  //設定倒數秒數
+
+
+
+function updateSecs() {
+    document.getElementById("seconds").innerHTML = seconds;
+    seconds--;
+    if (seconds == -1) {
+      document.getElementById("seconds").innerHTML = "Time's Up";
+        clearInterval(foo);
+        answerQuestion();
+        $("#a").attr('disabled', true);
+        $("#b").attr('disabled', true);
+        $("#c").attr('disabled', true);
+        $("#d").attr('disabled', true);
+    }
+}
+
+function countdownTimer() {
+    foo = setInterval(function () {
+        updateSecs()
+    }, 1000);
+}
+
+
 
 //顯示題目
 function showQuestion(){
+
   ad = 1;
   var random = Math.floor(Math.random()*questions.length);
   var q = questions.splice(random,1)[0];
   counter+=1;
+  seconds = 5;
+  document.getElementById("seconds").innerHTML = seconds;
+    countdownTimer();
   $(document).ready(function(){
     $("#counter").show();
     $("#content").show();
+    $("#seconds").show();
     $("#a").show();
     $("#b").show();
     $("#c").show();
@@ -86,6 +121,7 @@ function showQuestion(){
     $("#d").attr('disabled', false);
     $(".nextone").hide();
     $(".nextone1").hide();
+    
   });
 }
 function showFJCUQuestion(){
@@ -96,6 +132,7 @@ function showFJCUQuestion(){
   $(document).ready(function(){
     $("#counter").show();
     $("#content").show();
+    $("#seconds").show();
     $("#a").show();
     $("#b").show();
     $("#c").show();
@@ -115,6 +152,8 @@ function showFJCUQuestion(){
     $("#d").attr('disabled', false);
     $(".nextone").hide();
     $(".nextone1").hide();
+    seconds = 5;
+    countdownTimer();
   });
 }
 //檢查答案
@@ -137,8 +176,8 @@ function answerQuestion(){
         $("#d").addClass(" btn-success");
       });
     }
-  
-
+  //countdownTimer();
+clearInterval(foo);
   if(playerans == ans){
     score+=10;
     if(playerans == 'a'){
@@ -261,7 +300,7 @@ function Gameover(){
     { content: " 下列何者不是G20的會員國？", a: "阿根廷", b: "紐西蘭", c: "日本", d: "沙烏地阿拉伯", answer: "b" },
     { content: " 米老鼠養的狗叫做甚麼名字？", a: "忠犬小巴", b: "膽小狗英雄", c: "米老狗", d: "布魯托", answer: "d" },
     { content: " 下列何者不是中國古代四大發明？", a: "指南針", b: "火藥", c: "占星", d: "印刷", answer: "c" },
-    { content: " 下列哪一個國家是亞洲五小虎？", a: "印度", b: "印尼", c: "蔡小虎", d: "新加波", answer: "b" },
+    { content: " 下列哪一個國家是亞洲五小虎？", a: "印度", b: "印尼", c: "蔡小虎", d: "新加坡", answer: "b" },
     { content: " 台灣的知名廣告公仔:大同寶寶，請問價值最高的「第一批公仔」胸前的號碼是幾號？", a: "1", b: "51", c: "67", d: "87", answer: "b" },
     { content: " 正式的比賽級羽球，通常每顆有幾支羽毛？", a: "16", b: "87", c: "12", d: "20", answer: "a" },
     { content: " 請問10:27時，時鐘時針和分針夾角為幾度？", a: "150", b: "875", c: "151.5", d: "151.87", answer: "c" },

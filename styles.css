@@ -2,13 +2,41 @@
       font-family: 'Noto Sans TC', sans-serif;
       font-size: 550%;
       text-align:center;
-      background-image: -webkit-linear-gradient(#FD1701, #FDF704,#FD1701);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+         color: #3A3A3A;
+      /*  text-shadow: black 0.1em 0.1em 0.2em;*/
 }
 
+.blink1 {
+    animation-duration: 3s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+.blink2 {
+    animation-duration: 4s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+.blink3 {
+    animation-duration: 5s;
+    animation-name: blink;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+}
+@keyframes blink {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
 .ex1{
-  background-color:#000;
+  background-color:#323A45;
   padding:1%;
   border:solid 1px #c3c3c3;
   font-size: 145%;
@@ -24,7 +52,7 @@ button{
 .Q1{
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 550%;
-    color: #FFF;
+    color: #000;
     /*top: 70px;*/
     /*padding: 10px;*/
     text-align: center;
@@ -32,7 +60,7 @@ button{
 .content1{
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 250%;
-    color: #FFF;
+    color: #000;
     /*top: 70px;*/
     /*padding: 10px;*/
     text-align: center;
@@ -44,7 +72,7 @@ button{
     height: 50%;
     display: block;
     font-size: 275%;
-    text-align: center;
+    text-align: center;color: black;
 }
 .nextone{
   font-family: 'Noto Sans TC', sans-serif;
@@ -94,10 +122,27 @@ button{
 }
 /* source & rule content*/
 .scrc{
-  color: #FFF;
+  color: #000;
   font-size: 250%;
   font-family: 'Noto Sans TC', sans-serif;
   text-align: center; 
+}
+.time{
+  color: #BF1105;
+ /* -webkit-text-stroke: 2px #BF1105; */
+  font-family: 'Noto Sans TC', sans-serif;
+text-align: center; 
+ line-height:9vw;
+display:block;
+  width: 12%;
+  height: 9vw;
+  border:2px solid #000;
+  position:fixed;
+  right:0px;
+  background:#ECEAEA; 
+  margin-top: ;
+  font-size: 2vw;
+  border-radius: 50px;
 }
 /*about us content*/
 .abc{
@@ -110,6 +155,8 @@ button{
   font-size: 225%;
   font-family: 'Noto Sans TC', sans-serif; 
 }
+
+
 /*.shadow{
         text-align:center;
         font-family: 'Press Start 2P', cursive;
