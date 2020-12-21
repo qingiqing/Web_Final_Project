@@ -27,6 +27,12 @@
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
 }
+.inc{
+  color: #000;
+  font-size: 250%;
+  font-family: 'Noto Sans TC', sans-serif;
+
+}
 @keyframes blink {
     from {
         opacity: 1;
