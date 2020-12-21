@@ -128,6 +128,9 @@ function showFJCUQuestion(){
   var random = Math.floor(Math.random()* fjcuquestions.length);
   var q = fjcuquestions.splice(random,1)[0];
   counter+=1;
+  seconds = 5;
+  document.getElementById("seconds").innerHTML = seconds;
+    countdownTimer();
   $(document).ready(function(){
     $("#counter").show();
     $("#content").show();
@@ -151,8 +154,8 @@ function showFJCUQuestion(){
     $("#d").attr('disabled', false);
     $(".nextone").hide();
     $(".nextone1").hide();
-    seconds = 5;
-    countdownTimer();
+    // seconds = 5;
+    // countdownTimer();
   });
 }
 //檢查答案
@@ -271,6 +274,7 @@ function Gameover(){
           $("#content").addClass("score");
           $('.end').hide();
           $('.return').show();
+          $('#seconds').hide();
          });
       });
   });
@@ -306,10 +310,13 @@ var questions = [
     { content: " 「鱟」在生物學上的分類？", a: "腔腸動物門", b: "軟體動物門 ", c: "棘皮動物門", d: "節肢動物門", answer: "d" },
     { content: " 請問屏東墾丁位於？", a: "枋山", b: "楓港", c: "滿洲", d: "恆春", answer: "d" },
     { content: " 請問台灣有幾座國家公園？", a: "6", b: "7", c: "8", d: "9", answer: "c" },
-    { content: " 清朝時的地名「蛤仔難」位於今日台灣何縣市？？", a: "台南", b: "桃園", c: "宜蘭", d: "台東", answer: "c" },
+    { content: " 清朝時的地名「蛤仔難」位於今日台灣何縣市？", a: "台南", b: "桃園", c: "宜蘭", d: "台東", answer: "c" },
     { content: " 人的五感中那個感覺反應最快？", a: "味覺", b: "嗅覺", c: "聽覺", d: "視覺", answer: "a" },
     { content: " 臭氧層的臭氧減少的主因是下列何種化合物？", a: "二氧化氮", b: "氯氧化合勿", c: "氟氯碳化物", d: "二氧化碳", answer: "c" },
     { content: " 請問颱風登陸或出現最大風速的時候總是在哪個時間？", a: "不一定", b: "晚上", c: "凌晨", d: "下午", answer: "a" },
+    { content: " 下列何者不是分布在台灣東部的原住民？", a: "賽夏族", b: "阿美族", c: "太魯閣族", d: "卑南族", answer: "a" },
+    { content: " 下列何者不是位於台灣西邊的離島？", a: "小琉球", b: "澎湖", c: "金門", d: "綠島", answer: "d" },
+    { content: " 下列哪間主題樂園位於台灣東部？", a: "野柳海洋世界", b: "九族文化村", c: "遠雄海洋公園", d: "義大世界", answer: "c" },
  ]  
 var fjcuquestions =[
     { content: " (輔大)如果以爬樓梯的方式從濟時樓二樓到濟時樓三樓，共需爬幾階樓梯？", a: "18", b: "20", c: "23", d: "32", answer: "b" },
@@ -348,6 +355,7 @@ var fjcuquestions =[
     { content: " (輔大)為了方便大家領錢，位於焯炤館一樓的全聯對面同時存在一家銀行，請問是？", a: "國泰世華銀行", b: "土地銀行", c: "台新銀行", d: "玉山銀行", answer: "c" },
     { content: " (輔大)每一個捷運站都有其專屬的代號，請問輔大站的代號是？", a: "O18", b: "O19", c: "Y18", d: "Y19", answer: "b" },
     { content: " (輔大)請問「NF」是下列何者的教室代號？", a: "秉雅樓", b: "公博樓", c: "伯達樓", d: "文友樓", answer: "a" },
+    { content: " (輔大)下列何者為輔仁大學全名？", a: "輔仁大學", b: "私立輔仁大學", c: "財團法人私立輔仁大學", d: "輔仁大學學校財團法人輔仁大學", answer: "d" },
 ]
 
 
