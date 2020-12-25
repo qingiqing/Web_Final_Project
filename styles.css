@@ -27,12 +27,7 @@
     animation-direction: alternate;
     animation-timing-function: ease-in-out;
 }
-.inc{
-  color: #000;
-  font-size: 250%;
-  font-family: 'Noto Sans TC', sans-serif;
 
-}
 @keyframes blink {
     from {
         opacity: 1;
@@ -132,21 +127,26 @@ button{
   font-family: 'Noto Sans TC', sans-serif;
   text-align: center; 
 }
+.inc{
+  color: #000;
+  font-size: 250%;
+  font-family: 'Noto Sans TC', sans-serif;
+
+}
 .time{
   color: #BF1105;
- /* -webkit-text-stroke: 2px #BF1105; */
   font-family: 'Noto Sans TC', sans-serif;
-text-align: center; 
- line-height:9vw;
-display:block;
-  width: 12%;
+  text-align: center; 
+  line-height:9vw;
+  display:block;
+  width: 15%;
   height: 9vw;
   border:2px solid #000;
   position:fixed;
   right:0px;
   background:#ECEAEA; 
   margin-top: ;
-  font-size: 2vw;
+  font-size: 8vw;
   border-radius: 50px;
 }
 /*about us content*/
@@ -159,5 +159,5 @@ display:block;
   color: #000;
   font-size: 225%;
   font-family: 'Noto Sans TC', sans-serif; 
-}
+
 

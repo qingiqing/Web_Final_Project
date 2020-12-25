@@ -69,7 +69,8 @@ function updateSecs() {
     document.getElementById("seconds").innerHTML = seconds;
     // seconds--;
     if (seconds == 0) {
-      document.getElementById("seconds").innerHTML = "Time's Up";
+
+      // document.getElementById("seconds").innerHTML = "時間到";
         clearInterval(foo);
         answerQuestion();
         $("#a").attr('disabled', true);
@@ -248,15 +249,15 @@ clearInterval(foo);
     $(document).ready(function(){
       if(ad == 1)
       {
-         $('.nextone').show();
-         $('.nextone').text("NEXT");
-         a = 0;
+        $('.nextone').show();
+        $('.nextone').text("NEXT");
+        a = 0;
       }
      else
      {
-          $('.nextone1').show();
-          $('.nextone1').text("NEXT");
-          a = 0;
+        $('.nextone1').show();
+        $('.nextone1').text("NEXT");
+        a = 0;
      }
       
     });
@@ -319,8 +320,9 @@ var questions = [
     { content: " 下列何者不是分布在台灣東部的原住民？", a: "賽夏族", b: "阿美族", c: "太魯閣族", d: "卑南族", answer: "a" },
     { content: " 下列何者不是位於台灣西邊的離島？", a: "小琉球", b: "澎湖", c: "金門", d: "綠島", answer: "d" },
     { content: " 下列哪間主題樂園位於台灣東部？", a: "野柳海洋世界", b: "九族文化村", c: "遠雄海洋公園", d: "義大世界", answer: "c" },
- ]  
-var fjcuquestions =[
+ ]
+
+ var fjcuquestions =[
     { content: " (輔大)如果以爬樓梯的方式從濟時樓二樓到濟時樓三樓，共需爬幾階樓梯？", a: "18", b: "20", c: "23", d: "32", answer: "b" },
     { content: " (輔大)請問聖言樓PC房(645教室)，共有幾台電腦？(包含講師的電腦)", a: "60", b: "62", c: "65", d: "66", answer: "c" },
     { content: " (輔大)請問SF645PC房的電腦的處理器的型號？", a: "i5-8700", b: "i7-8700", c: "i5-8750", d: "i5-8500", answer: "d" },
