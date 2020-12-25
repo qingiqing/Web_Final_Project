@@ -249,12 +249,14 @@ clearInterval(foo);
       if(ad == 1)
       {
          $('.nextone').show();
-      $('.nextone').text("NEXT");
+         $('.nextone').text("NEXT");
+         a = 0;
       }
      else
      {
-      $('.nextone1').show();
-      $('.nextone1').text("NEXT");
+          $('.nextone1').show();
+          $('.nextone1').text("NEXT");
+          a = 0;
      }
       
     });
