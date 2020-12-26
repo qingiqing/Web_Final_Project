@@ -13,12 +13,17 @@
   <script language="javascript"></script>
   <script src="./javascript.js"></script>
   <link rel="stylesheet" href="./styles.css" />
+   <link rel="manifest" href="./manifest.json">
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-
+    <!-- iOS -->
+    <link rel="apple-touch-icon" href="./img/icons/icon-144x144.png" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-title" content="PWAConf" />
 </head>
 
-<body style="background-color:#DEDCDC; font-size=62.5%;">
+<body style="background-color:#DEDCDC;">
    <marquee SCROLLAMOUNT="7" class="ex1">
     <div style="color:#FFF;  ">輔仁大學資工學系Web基本原理與技術期末專題</div></marquee>
  <p><span id="seconds" class="time">5</span> </p>
@@ -55,5 +60,6 @@
       </div>
     </div>
   </div>
+   <script src="./app.js"></script>
 </body>
 </html>

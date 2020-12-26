@@ -3,7 +3,7 @@ var counter = 0 //紀錄作答題數
 var score = 0; //分數
 var a; //紀錄作答答案
 var ad;
-var seconds = 5; // seconds for HTML
+var seconds = 10; // seconds for HTML
 var foo; // variable for clearInterval() function
 
 $(document).ready(function(){
@@ -12,7 +12,6 @@ $(document).ready(function(){
   $(".nextone").hide();
   $(".nextone1").hide();
   $(".end").hide();
-  // $(".return").show();
   $("#a").hide();
   $("#b").hide();
   $("#c").hide();
@@ -47,13 +46,13 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.nextone').click(function(){
     showQuestion();
-    seconds = 5;
+    seconds = 10;
   });
 });
 $(document).ready(function(){
   $('.nextone1').click(function(){
     showFJCUQuestion();
-    seconds = 5;
+    seconds = 10;
   });
 });
 $(document).ready(function(){
@@ -69,7 +68,6 @@ function updateSecs() {
     document.getElementById("seconds").innerHTML = seconds;
     // seconds--;
     if (seconds == 0) {
-      // document.getElementById("seconds").innerHTML = "時間到";
         clearInterval(foo);
         answerQuestion();
         $("#a").attr('disabled', true);
@@ -94,7 +92,7 @@ function showQuestion(){
   var random = Math.floor(Math.random()*questions.length);
   var q = questions.splice(random,1)[0];
   counter+=1;
-  seconds = 5;
+  seconds = 10;
   document.getElementById("seconds").innerHTML = seconds;
     countdownTimer();
   $(document).ready(function(){
@@ -128,7 +126,7 @@ function showFJCUQuestion(){
   var random = Math.floor(Math.random()* fjcuquestions.length);
   var q = fjcuquestions.splice(random,1)[0];
   counter+=1;
-  seconds = 5;
+  seconds = 10;
   document.getElementById("seconds").innerHTML = seconds;
     countdownTimer();
   $(document).ready(function(){
@@ -154,8 +152,6 @@ function showFJCUQuestion(){
     $("#d").attr('disabled', false);
     $(".nextone").hide();
     $(".nextone1").hide();
-    // seconds = 5;
-    // countdownTimer();
   });
 }
 //檢查答案
