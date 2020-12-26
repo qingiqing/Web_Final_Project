@@ -109,7 +109,7 @@ button{
     background-color:#949ADD ;
     font-family: 'Noto Sans TC', sans-serif;
     font-size: 160%;
-    line-height: 24px;
+    /*line-height: 140%;*/
     padding:7px;
     border:solid 1px #c3c3c3;
     display: none;

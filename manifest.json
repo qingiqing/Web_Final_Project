@@ -1,6 +1,6 @@
 {
-  "name": "PWAConf",
-  "short_name": "PWAConf",
+  "name": "KnowledgeKing",
+  "short_name": "KnowledgeKing",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#2A3443",
